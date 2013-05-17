@@ -1,8 +1,19 @@
 <div class="container">
   <h1>Create a New Blogalicious Post!</h1>
 
-  
+
+
   <form id='create_post' action="/" method="post">
+
+    <% if @post %>
+    <% @post.errors.each do |field, message| %>
+    <%= "#{field} #{message}" %>
+    <br>
+    <br>
+    <% end %>
+    <% end %>
+
+
     Post Title:
     <br>
     <input type="text" name="post_title">
